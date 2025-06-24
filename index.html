@@ -1,193 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dan Wright – IT Operations Leader</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VCIO Services | Istari</title>
   <style>
-    :root {
-      --primary: #0052cc;
-      --accent: #0066ff;
-      --text: #333;
-      --bg: #fdfdfd;
-      --card-bg: #fff;
-      --transition: 0.4s ease;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); }
-    nav {
-      position: fixed; width: 100%; top: 0; left: 0;
-      background: var(--card-bg); box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 100;
-    }
-    .nav-container { max-width: 960px; margin: auto; display: flex; justify-content: space-between; padding: 1rem; }
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: color var(--transition); }
-    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
-    header.hero {
-      height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-      background: var(--primary); color: #fff; text-align: center; padding: 0 1rem;
-    }
-    header.hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-    header.hero p { font-size: 1.2rem; max-width: 600px; }
-    main { padding-top: 5rem; }
-    section { max-width: 960px; margin: auto; padding: 4rem 1rem; opacity: 0; transform: translateY(20px); transition: opacity var(--transition), transform var(--transition); }
-    section.visible { opacity: 1; transform: translateY(0); }
-    h2 { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; text-align: center; }
-    .about p { max-width: 800px; margin: auto; line-height: 1.6; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 1.5rem; }
-    .card { background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform var(--transition); }
-    .card:hover { transform: translateY(-5px); }
-    .timeline { display: flex; overflow-x: auto; gap: 1rem; scroll-snap-type: x mandatory; padding-bottom: 1rem; }
-    .timeline .entry { flex: 0 0 300px; background: var(--card-bg); padding: 1rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: start; }
-    .timeline .entry h4 { margin-bottom: 0.5rem; }
-    .timeline .entry ul { list-style: disc; margin-left: 1.2rem; line-height: 1.5; }
-    .insights { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1.5rem; }
-    .insights .card a { display: inline-block; margin-top: 0.5rem; font-weight: 500; }
-    footer { text-align: center; padding: 2rem 1rem; font-size: 0.9rem; color: #777; }
-    @media (max-width: 600px) {
-      header.hero h1 { font-size: 2.2rem; }
-      nav .nav-links { display: none; }
-      /* burger menu can be added if needed */
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; }
+    header { background: #004080; color: white; padding: 2rem 1rem; text-align: center; }
+    header img { max-width: 200px; margin-bottom: 1rem; }
+    header h1 { margin: 0; font-size: 2.5rem; }
+    header p { margin: 0.5rem 0 0; font-size: 1.2rem; }
+    section { padding: 4rem 1rem; max-width: 960px; margin: auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .card { background: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .cta { text-align: center; background: #e0f2ff; padding: 3rem 1rem; }
+    .btn { display: inline-block; padding: 0.75rem 1.5rem; background: #004080; color: white; text-decoration: none; border-radius: 4px; }
+    footer { background: #222; color: white; text-align: center; padding: 2rem 1rem; font-size: 0.9rem; }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <a href="#hero" style="font-weight:600; color:var(--primary);">Dan Wright</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#experience">Experience</a>
-        <a href="#community">Community</a>
-        <a href="#insights">Insights</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <header id="hero" class="hero">
-    <h1>Dan Wright</h1>
-    <p>Transforming IT Operations into Strategic Business Enablers</p>
+  <header>
+    <img src="istari-logo.png" alt="Istari Logo" />
+    <h1>Istari VCIO Services</h1>
+    <p>Platform-Agnostic. Part of Your Team.</p>
   </header>
 
-  <main>
-    <section id="about" class="about">
-      <h2>About Me</h2>
-      <p>With over 15 years of leadership in IT Operations, I partner closely with executives and boards to align technology strategy with organisational goals. My passion lies in optimising infrastructure, fostering high-performing teams, and delivering sustainable digital transformation.</p>
-    </section>
+  <section id="overview">
+    <h2>Integrated. Outcome-Focused.</h2>
+    <p>At Istari, we embed ourselves within your organisation, collaborating with your existing vendors and stakeholders to deliver clear, measurable outcomes. We don’t push a single platform—we tailor solutions to your unique needs and goals.</p>
+  </section>
 
-    <section id="capabilities">
-      <h2>Key Capabilities</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Strategic Leadership</h3>
-          <p>Steering multi-million-dollar IT roadmaps, nurturing board-level partnerships, and driving measurable business outcomes.</p>
-        </div>
-        <div class="card">
-          <h3>Operational Excellence</h3>
-          <p>Implementing ITIL best practices, enhancing service delivery, and achieving significant uptime improvements.</p>
-        </div>
-        <div class="card">
-          <h3>Digital Transformation</h3>
-          <p>Leading cloud and SaaS migrations, integrating AI-driven tools, and realising up to 75% cost savings.</p>
-        </div>
+  <section id="services">
+    <h2>How We Help</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Strategic Planning</h3>
+        <p>Define your technology roadmap aligned with business objectives—without bias toward any single vendor.</p>
       </div>
-    </section>
-
-    <section id="experience">
-      <h2>Professional Experience</h2>
-      <div class="timeline">
-        <div class="entry">
-          <h4>Head of Technology</h4>
-          <p><strong>RACS, Sydney</strong> • Sep 2024 – Present</p>
-          <ul>
-            <li>Delivered CMS migration from legacy to SaaS platform.</li>
-            <li>Embedded Essential 8 security standards; improved SLAs.</li>
-            <li>Consolidated systems, reducing operational complexity.</li>
-          </ul>
-        </div>
-        <div class="entry">
-          <h4>Infrastructure Manager</h4>
-          <p><strong>King Living, Sydney</strong> • May 2023 – Jul 2024</p>
-          <ul>
-            <li>Deployed Microsoft 365 E5 & CoPilot POC; cut subscriptions by 98%.</li>
-            <li>Established knowledge base; reduced tickets by 30%.</li>
-          </ul>
-        </div>
-        <div class="entry">
-          <h4>Head of Corporate IT</h4>
-          <p><strong>Red Bee Media, Global</strong> • Oct 2020 – May 2023</p>
-          <ul>
-            <li>Executed M365 & Azure AD migration; saved $2.3M.</li>
-            <li>Streamlined M&A integration; cut SLA breaches by 60%.</li>
-          </ul>
-        </div>
+      <div class="card">
+        <h3>Vendor Management</h3>
+        <p>Coordinate and manage all IT vendors on your behalf, ensuring seamless communication and accountability.</p>
       </div>
-    </section>
-
-    <section id="community">
-      <h2>Community Engagement</h2>
-      <p>Partnering with <a href="https://a2jtech.org.au/" target="_blank">A2JTech</a> to leverage technology for access to justice:</p>
-      <div class="cards">
-        <div class="card"><p>Scalable case‑management platform for pro bono clinics.</p></div>
-        <div class="card"><p>Digital literacy workshops for legal practitioners.</p></div>
-        <div class="card"><p>Data security governance advising for sensitive data.</p></div>
+      <div class="card">
+        <h3>Risk &amp; Security</h3>
+        <p>Assess and mitigate cybersecurity risks with comprehensive policies, compliance frameworks, and continuous monitoring.</p>
       </div>
-    </section>
-
-    <section id="insights">
-      <h2>Latest LinkedIn Insights</h2>
-      <div class="insights">
-        <div class="card">
-          <h3>Driving ITSM Maturity at RACS</h3>
-          <a href="#">Read more →</a>
-        </div>
-        <div class="card">
-          <h3>Digital Transformation ROI</h3>
-          <a href="#">Read more →</a>
-        </div>
-        <div class="card">
-          <h3>Leveraging AI for Compliance</h3>
-          <a href="#">Read more →</a>
-        </div>
+      <div class="card">
+        <h3>Operational Excellence</h3>
+        <p>Optimize processes, reduce wasteful spending, and implement best practices to drive efficiency and cost savings.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    
-  </main>
+  <section id="non-profit">
+    <h2>Non-Profit &amp; Social Impact Expertise</h2>
+    <p>With years of experience working with non-profit organisations like Refugee Advice &amp; Casework Service (RACS), we understand the unique challenges and constraints of the sector. We deliver tech strategies that maximise impact while respecting budgetary and regulatory requirements.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Dan Wright</h2>
+    <p>Dan Wright is a seasoned IT leader with over 15 years of experience across M365, Azure, cybersecurity, and digital transformation. As your VCIO at Istari, Dan brings:</p>
+    <ul>
+      <li>Deep expertise in Microsoft 365, Azure AD, Intune, and CoPilot integration</li>
+      <li>Proven track record in IT strategy development and execution</li>
+      <li>Strong background in non-profit IT transformation at RACS</li>
+      <li>Commitment to clear communication and transparent reporting</li>
+    </ul>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Elevate Your IT?</h2>
+    <p>Let’s discuss how we can seamlessly integrate with your team and drive real results.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form action="#" method="post">
+      <label for="name">Name</label><br />
+      <input type="text" id="name" name="name" required><br /><br />
+      <label for="email">Email</label><br />
+      <input type="email" id="email" name="email" required><br /><br />
+      <label for="message">Message</label><br />
+      <textarea id="message" name="message" rows="4" required></textarea><br /><br />
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
 
   <footer>
-    &copy; 2025 Dan Wright | Crafted for transformative impact
+    <p>&copy; 2025 Istari VCIO Services. All rights reserved.</p>
   </footer>
-
-  <script>
-    // Reveal sections on scroll
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(({target, isIntersecting}) => {
-        if (isIntersecting) {
-          target.classList.add('visible');
-          observer.unobserve(target);
-        }
-      });
-    }, {threshold: 0.2});
-    sections.forEach(sec => observer.observe(sec));
-
-    // Highlight nav on scroll
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const opts = {threshold: 0.6};
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach(({target, isIntersecting}) => {
-        if (isIntersecting) {
-          navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + target.id));
-        }
-      });
-    }, opts);
-    sections.forEach(sec => navObserver.observe(sec));
-  </script>
 </body>
 </html>
